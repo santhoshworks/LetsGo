@@ -1,4 +1,4 @@
-<div class="col s12 m7">
+<div class="col s12 m5">
   <h2 class="header">Dashboard</h2>
   <div class="card horizontal" *ngFor="let poll of items | async" >
     <div class="card-image">
@@ -6,7 +6,7 @@
     </div>
     <div class="card-stacked">
       <div class="card-content">
-        <p>{{ poll.question }}</p>
+        <p>{{ poll | json }}</p>
       </div>
       <div class="card-action">
         <a href="#"><i class="large material-icons">favorite_border</i>Vote</a>
