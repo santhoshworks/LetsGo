@@ -1,16 +1,11 @@
-<nav class="blue darken-2" role="navigation">
-  <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">LetsGo</a>
-    <ul class="right hide-on-med-and-down">
-      <li routerLinkActive="active"><a routerLink="/dashboard" >Dashboard</a></li>
-      <li routerLinkActive="active"><a routerLink="/newPoll" >New Poll</a></li>
-    </ul>
-
-    <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
-      <li routerLinkActive="active"><a routerLink="/dashboard" >Dashboard</a>
-      </li>
-  <li routerLinkActive="active"><a routerLink="/newPoll" >New Poll</a></li>
-
-    </ul>
-    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-  </div>
-</nav>
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+    <logo>
+        <a  id="logo-container" class="navbar-brand" href="#">LetsGo</a>
+    </logo>
+    <links>
+        <div class="navbar-nav">
+           <a routerLinkActive="active" class="nav-item nav-link waves-light"  mdbRippleRadius routerLink="/dashboard" >Dashboard</a>
+           <a routerLinkActive="active" class="nav-item nav-link waves-light"  mdbRippleRadius routerLink="/newPoll" >New Poll</a>
+        </div>
+    </links>
+</mdb-navbar>
