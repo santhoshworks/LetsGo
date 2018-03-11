@@ -1,0 +1,30 @@
+.testimonial-card {
+    margin-top:20px;
+    .card-up {
+        overflow: hidden;
+        height: 150px;
+        border-radius: .3rem .3rem 0 0;
+        background-image: url(http://static.sites.yp.com/templates/creator/m_5/5c/5c5/743/assets/header_image_1.jpg?v=1472746407);
+        width: 100%;
+        background-size: 100% 150px;
+        background-repeat: no-repeat;
+    }
+    .avatar {
+        border-radius: 50%;
+        height: 120px;
+        width: 120px;
+        margin: -65px auto 0;
+        overflow: hidden;
+        border: 5px solid #fff;
+        img {
+            width: 100%;
+        }
+    }
+    .card-body {
+        .badge {
+            padding: 7px 28px;
+            border-radius: 10px;
+            font-size: 17px;
+        }
+    }
+}

@@ -1,18 +1,38 @@
-<div class="col s12 m5">
-    <h2 class="header">Dashboard</h2>
-    <div class="card"  *ngFor="let poll of items | async" >
-        <!--Card content-->
-        <div class="card-body">
-            <!--Title-->
-            <h4 class="card-title"></h4>
-            <!--Text-->
-            <div class="card-content">
-                <p>{{ poll | json }}</p>
-              </div>
-            <a href="#" class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
-        </div>
-    
-    </div>
-</div>
 
-<app-vote></app-vote>
+<div class="row">
+
+    <div class="container">
+        <!--Grid column-->
+        <div class="col-md-4"  *ngFor="let poll of items | async">
+    
+            <!--Card-->
+            <div class="card testimonial-card">
+    
+                <!--Bacground color-->
+                <div class="card-up indigo lighten-1">
+                </div>
+    
+                <!--Avatar-->
+                <div class="avatar"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="rounded-circle">
+                </div>
+    
+                <div class="card-body">
+                    <!--Name-->
+                    <h4 class="card-title">{{ poll.question }}</h4>
+                    <hr>
+                    <span class="badge green">Open</span>
+
+                    <!--Quotation-->
+                    <p>{{ poll | json }}</p>
+                    <a  class="btn btn-primary waves-light" mdbRippleRadius data-toggle="modal" (click)="setSelectedPoll(poll)" data-target="#basicExample">Choose</a>
+                    <a href="#" class="btn btn-primary waves-light" mdbRippleRadius>View Results</a>
+                </div>
+    
+            </div>
+            <!--/.Card-->
+    
+        </div>
+        </div>
+ </div>
+
+<app-vote #votemodal [selectedPoll]="selectedPoll"></app-vote>
