@@ -1,9 +1,9 @@
 
-<div class="row">
 
-    <div class="container">
+<div class="container">
+    <div class="row  align-items-center" >
         <!--Grid column-->
-        <div class="col-md-4"  *ngFor="let poll of items | async">
+        <div class="col-6 col-md-4"  *ngFor="let poll of items | async">
     
             <!--Card-->
             <div class="card testimonial-card">
@@ -20,10 +20,8 @@
                     <!--Name-->
                     <h4 class="card-title">{{ poll.question }}</h4>
                     <hr>
-                    <span class="badge green">Open</span>
-
                     <!--Quotation-->
-                    <p>{{ poll | json }}</p>
+                    <p>Sample description down here</p>
                     <a  class="btn btn-primary waves-light" mdbRippleRadius data-toggle="modal" (click)="setSelectedPoll(poll)" data-target="#basicExample">Choose</a>
                     <a href="#" class="btn btn-primary waves-light" mdbRippleRadius>View Results</a>
                 </div>

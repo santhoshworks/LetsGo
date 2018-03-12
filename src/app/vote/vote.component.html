@@ -1,33 +1,33 @@
-
-<button type="button" class="btn btn-primary waves-light" data-toggle="modal" data-target="#basicExample" (click)="showModal()" mdbRippleRadius>
-        Top right
-    </button>
-    {{selectedPoll| json}}
-    <div mdbModal #side="mdb-modal" class="modal fade right" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-side modal-top-right" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="side.hide()">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                        <div class="form-group">
-                            <input mdbDeepDirective type="checkbox" id="checkbox1">
-                            <label for="checkbox1">Classic checkbox</label>
+<div mdbModal #side="mdb-modal" class="modal fade right" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg  modal-top-right" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title w-100" id="myModalLabel">Select your  choices</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="side.hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body"  *ngIf="selectedPoll">
+                    <h2>{{selectedPoll.question}}</h2>
+                    <div class="form-group">
+                        <label for="options">Options :</label>
+                        <div *ngFor="let option of selectedPoll.options">
+                            <label>
+                                <input type="checkbox"
+                                        name="options"
+                                        value="{{option}}"
+                                        [checked]="newSelectedOptions.indexOf(option) >= 0"
+                                        (change)="updateCheckedOptions(option, $event)"/>
+                                {{option}}
+                            </label>
                         </div>
-                        
-                        <div class="form-group">
-                            <input mdbDeepDirective type="checkbox" class="filled-in" id="checkbox2">
-                            <label for="checkbox2">Filled-in checkbox</label>
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary waves-light" data-dismiss="modal" (click)="side.hide()" mdbRippleRadius>Close</button>
-                    <button type="button" class="btn btn-primary waves-light" mdbRippleRadius>Save changes</button>
-                </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary waves-light" data-dismiss="modal" (click)="side.hide()" mdbRippleRadius>Close</button>
+                <button type="button" class="btn btn-primary waves-light" mdbRippleRadius (click)="postData()" >Post</button>
             </div>
         </div>
     </div>
+</div>
                     

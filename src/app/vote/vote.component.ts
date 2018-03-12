@@ -9,14 +9,30 @@ export class VoteComponent implements OnInit {
   @Input() selectedPoll: any;
   @ViewChild(ModalDirective)
   private modal: ModalDirective;
+  private oldSelectedOptions = [];
+  private newSelectedOptions = [];
   constructor(
   ) {
   }
 
   ngOnInit() {
         // initialize scrollspy
+        this.newSelectedOptions = this.oldSelectedOptions;
   }
   showModal() {
     this.modal.show();
+  }
+  closeModal() {
+    this.modal.hide();
+  }
+  updateCheckedOptions(option, event) {
+    if (this.newSelectedOptions.indexOf(option) > -1) {
+      this.newSelectedOptions.splice(option, 1);
+    } else {
+      this.newSelectedOptions.push(option);
+    }
+  }
+  postData() {
+
   }
 }
