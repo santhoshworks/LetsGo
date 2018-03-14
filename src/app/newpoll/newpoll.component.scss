@@ -1,0 +1,14 @@
+.newpoll {
+    margin-top: 30px;
+    .form-card{
+        .formHeader {
+            img{
+                width: 50px;
+            }
+        }
+        .dropdown .dropdown-menu.dropdown-primary .dropdown-item:active, .dropdown .dropdown-menu.dropdown-primary .dropdown-item:hover {
+            background-color: #4285f4;
+            color: #FFF;
+        }
+    }
+}

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ModalDirective } from 'angular-bootstrap-md/modals/modal.directive';
+import { Observable } from 'rxjs/Observable';
+import { AngularFireDatabase } from 'angularfire2/database';
 @Component({
   selector: 'app-vote',
   templateUrl: './vote.component.html',
@@ -11,8 +13,10 @@ export class VoteComponent implements OnInit {
   private modal: ModalDirective;
   private oldSelectedOptions = [];
   private newSelectedOptions = [];
-  constructor(
-  ) {
+  db: any;
+  items: Observable<any[]>;
+  constructor(db: AngularFireDatabase) {
+    this.items = db.list('letsgoplaces/Polls').valueChanges();
   }
 
   ngOnInit() {
