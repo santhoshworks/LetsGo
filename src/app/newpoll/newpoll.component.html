@@ -13,16 +13,19 @@
                          <h3><img src="https://ih0.redbubble.net/image.25919193.1452/flat,800x800,075,f.jpg"/> Whats in your mind ??? </h3>
                       </div>
                       <br>
-                      <form>
+                      <form #newPoll="ngForm"  (ngSubmit)="onSubmit(newPoll)">
                          <!--Grid row-->
                          <div class="row">
                             <!--Grid column-->
                             <div class="col-md-12">
                                <div class="md-form">
                                   <div class="md-form">
-                                     <input mdbActive type="text" id="form-contact-name" class="form-control">
-                                     <label for="form-contact-name" class="">Your Question goes here</label>
+                                     <input mdbActive type="text" id="form-question" id="name"
+                                     required
+                                     [(ngModel)]="newPoll.question" name="question" class="form-control">
+                                     <label for="form-question" class="">Your Question goes here</label>
                                   </div>
+                                  {{newPoll.question}}
                                </div>
                             </div>
                             <!--Grid column-->
@@ -37,7 +40,10 @@
                                                                         
                                     <!--Dropdown primary-->
                                     <label id="form-type" ></label>
-                                    <select for="form-type" class="">
+                                    <select for="form-type" class="" 
+                                    name="type" required
+                                    [(ngModel)]="newPoll.type">
+                                        <option selected="selected"> Hangout Type</option>
                                         <option>Restaurant</option>
                                         <option>Party</option>
                                         <option>Places</option>
@@ -57,7 +63,10 @@
                             <div class="col-md-6">
                                <div class="md-form">
                                   <div class="md-form">
-                                     <input mdbActive type="text" id="form-options1" class="form-control">
+                                     <input mdbActive type="text" id="form-options1" 
+                                     name="option1" class="form-control"
+                                     required
+                                     [(ngModel)]="newPoll.option1">
                                      <label for="form-options1" class="">Option 1</label>
                                   </div>
                                </div>
@@ -69,7 +78,12 @@
                             <div class="col-md-6">
                                <div class="md-form">
                                   <div class="md-form">
-                                     <input mdbActive type="text" id="form-options2" class="form-control">
+                                     <input mdbActive 
+                                        type="text" id="form-options2"
+                                        class="form-control"
+                                        name="option2" 
+                                        required
+                                        [(ngModel)]="newPoll.option2">
                                      <label for="form-options2" class="">Option 2</label>
                                   </div>
                                </div>
@@ -81,7 +95,10 @@
                             <div class="col-md-6">
                                <div class="md-form">
                                   <div class="md-form">
-                                     <input mdbActive type="text" id="form-options3" class="form-control">
+                                     <input mdbActive type="text" id="form-options3"
+                                     [(ngModel)]="newPoll.option3"
+                                     name="option3" 
+                                      class="form-control">
                                      <label for="form-options3" class="">Option 3</label>
                                   </div>
                                </div>
@@ -93,7 +110,9 @@
                             <div class="col-md-6">
                                <div class="md-form">
                                   <div class="md-form">
-                                     <input mdbActive type="text" id="form-options4" class="form-control">
+                                     <input mdbActive type="text" id="form-options4" 
+                                     name="option4"
+                                     [(ngModel)]="newPoll.option4" class="form-control">
                                      <label for="form-options4" class="">Option 4</label>
                                   </div>
                                </div>
@@ -106,7 +125,9 @@
                             <!--Grid column-->
                             <div class="col-md-12">
                                <div class="md-form">
-                                  <textarea mdbActive  type="text" id="form-contact-message" class="md-textarea"></textarea>
+                                  <textarea mdbActive  type="text" id="form-contact-message"
+                                  name="comments" 
+                                  [(ngModel)]="newPoll.comments" class="md-textarea"></textarea>
                                   <label for="form-contact-message">Comments ::</label>
                                </div>
                             </div>
@@ -118,7 +139,7 @@
                                 <!--Grid column-->
                                 <div class="col-md-12">
                                     <div class="md-form">
-                                        <a class="btn btn-primary btn-lg waves-light" role="button" mdbRippleRadius>Submit</a>
+                                        <button type="submit" class="btn btn-primary btn-lg waves-light" role="button" mdbRippleRadius>Submit</button>
                                     </div>
                                 </div>
                                 <!--Grid column-->
