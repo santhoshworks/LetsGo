@@ -56,70 +56,9 @@
                             </div>
                             <!--Grid column-->
                          </div>
-                         <!--Grid row-->
-                         <!--Grid row-->
-                         <div class="row">
-                            <!--Grid column-->
-                            <div class="col-md-6">
-                               <div class="md-form">
-                                  <div class="md-form">
-                                     <input mdbActive type="text" id="form-options1" 
-                                     name="option1" class="form-control"
-                                     required
-                                     [(ngModel)]="newPoll.option1">
-                                     <label for="form-options1" class="">Option 1</label>
-                                  </div>
-                               </div>
-                            </div>
-                            <!--Grid column-->
-                         </div>
-                         <div class="row">
-                            <!--Grid column-->
-                            <div class="col-md-6">
-                               <div class="md-form">
-                                  <div class="md-form">
-                                     <input mdbActive 
-                                        type="text" id="form-options2"
-                                        class="form-control"
-                                        name="option2" 
-                                        required
-                                        [(ngModel)]="newPoll.option2">
-                                     <label for="form-options2" class="">Option 2</label>
-                                  </div>
-                               </div>
-                            </div>
-                            <!--Grid column-->
-                         </div>
-                         <div class="row">
-                            <!--Grid column-->
-                            <div class="col-md-6">
-                               <div class="md-form">
-                                  <div class="md-form">
-                                     <input mdbActive type="text" id="form-options3"
-                                     [(ngModel)]="newPoll.option3"
-                                     name="option3" 
-                                      class="form-control">
-                                     <label for="form-options3" class="">Option 3</label>
-                                  </div>
-                               </div>
-                            </div>
-                            <!--Grid column-->
-                         </div>
-                         <div class="row">
-                            <!--Grid column-->
-                            <div class="col-md-6">
-                               <div class="md-form">
-                                  <div class="md-form">
-                                     <input mdbActive type="text" id="form-options4" 
-                                     name="option4"
-                                     [(ngModel)]="newPoll.option4" class="form-control">
-                                     <label for="form-options4" class="">Option 4</label>
-                                  </div>
-                               </div>
-                            </div>
-                            <!--Grid column-->
-                         </div>
-                         <!--Grid row-->
+
+                         <app-options></app-options>
+
                          <!--Grid row-->
                          <div class="row">
                             <!--Grid column-->
@@ -128,7 +67,7 @@
                                   <textarea mdbActive  type="text" id="form-contact-message"
                                   name="comments" 
                                   [(ngModel)]="newPoll.comments" class="md-textarea"></textarea>
-                                  <label for="form-contact-message">Comments ::</label>
+                                  <label for="form-contact-message">Comments:</label>
                                </div>
                             </div>
                             <!--Grid column-->

@@ -15,6 +15,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { OptionsComponent } from './options/options.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     OpinionsComponent,
     HeaderComponent,
     FooterComponent,
-    VoteComponent
+    VoteComponent,
+    OptionsComponent
   ],
   imports: [
     BrowserModule,

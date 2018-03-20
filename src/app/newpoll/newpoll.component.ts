@@ -8,7 +8,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
   templateUrl: './newpoll.component.html',
   styleUrls: ['./newpoll.component.scss']
 })
-export class NewpollComponent implements OnInit {
+export class NewpollComponent {
 
   // newPoll: Poll;
   // newPoll = {};
@@ -17,8 +17,6 @@ export class NewpollComponent implements OnInit {
     this.polls = db.list('letsgoplaces/Polls');
   }
 
-  ngOnInit() {
-  }
   onSubmit(newPoll) {
     console.log(newPoll);
     const dbObj = {
@@ -26,7 +24,7 @@ export class NewpollComponent implements OnInit {
     };
     for (const key in newPoll.value) {
       if (newPoll.value[key]) {
-        if(key.indexOf('option') >= 0) {
+        if (key.indexOf('option') >= 0) {
           dbObj.options.push(newPoll.value[key]);
         } else {
           dbObj[key] = newPoll.value[key];
