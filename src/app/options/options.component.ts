@@ -18,7 +18,7 @@ export class OptionsComponent implements OnInit {
 
   choices: Object[];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.choices = [
@@ -26,5 +26,10 @@ export class OptionsComponent implements OnInit {
       new Options(''),
       new Options('')
     ];
+  }
+
+  addMore() {
+    const choices = new Options('');
+    this.choices.push(choices);
   }
 }
