@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Poll } from '../model/newPoll';
+import { Poll } from '../model/Poll';
 
 class Options {
   value: string;

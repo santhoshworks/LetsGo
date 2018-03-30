@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Poll } from '../model/newPoll';
 // import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { NgForm } from '@angular/forms/src/directives/ng_form';
 
 @Component({
   selector: 'app-newpoll',

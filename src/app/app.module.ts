@@ -16,6 +16,13 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { OptionsComponent } from './options/options.component';
+import { FirebaseApiService } from './services/firebase-api.service';
+import { AuthService } from './services/auth.service';
+import { NotifyService } from './services/notify.service';
+import { LoginComponent } from './login/login.component';
+import { EmailComponent } from './email/email.component';
+import { SignupComponent } from './signup/signup.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +32,10 @@ import { OptionsComponent } from './options/options.component';
     HeaderComponent,
     FooterComponent,
     VoteComponent,
-    OptionsComponent
+    OptionsComponent,
+    LoginComponent,
+    EmailComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +46,7 @@ import { OptionsComponent } from './options/options.component';
     AngularFireDatabaseModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [],
+  providers: [FirebaseApiService, AuthService, NotifyService],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })
