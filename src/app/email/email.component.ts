@@ -13,14 +13,7 @@ export class EmailComponent implements OnInit {
   error: any;
   credential: firebase.auth.AuthCredential;
 
-  constructor(public af: AngularFireAuth, private router: Router) {
-    this.af.authState.
-    subscribe(auth => {
-      if (auth) {
-        // this.router.navigateByUrl('/members');
-      }
-    });
-  }
+  constructor(public af: AngularFireAuth, private router: Router) {}
 
 
   onSubmit(formData) {
@@ -30,7 +23,12 @@ export class EmailComponent implements OnInit {
       console.log(this.credential);
       this.af.auth
       .signInAndRetrieveDataWithEmailAndPassword(formData.value.email, formData.value.password)
-      .then(data => console.log(data))
+      .then(data => {
+        console.log('log after signin' ,  data);
+        if (!data.user.isAnonymous) {
+          this.router.navigateByUrl('/dashboard');
+        }
+      })
       .catch(err =>  console.log(err));
     }
   }

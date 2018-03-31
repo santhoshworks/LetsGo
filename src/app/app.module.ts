@@ -22,6 +22,7 @@ import { NotifyService } from './services/notify.service';
 import { LoginComponent } from './login/login.component';
 import { EmailComponent } from './email/email.component';
 import { SignupComponent } from './signup/signup.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { SignupComponent } from './signup/signup.component';
     AngularFireDatabaseModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [FirebaseApiService, AuthService, NotifyService],
+  providers: [FirebaseApiService, AuthService, NotifyService, AuthGuard],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })
