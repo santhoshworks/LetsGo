@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OpinionsComponent } from './opinions/opinions.component';
 import { NewpollComponent } from './newpoll/newpoll.component';
@@ -13,9 +13,9 @@ const routes: Routes = [
   { path: 'login-email', component: EmailComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'dashboard', component: DashboardComponent},
-  { path: 'opinion', component: OpinionsComponent},
-  { path: 'newPoll', component: NewpollComponent}
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+  { path: 'opinion', component: OpinionsComponent, canActivate: [AuthGuard]},
+  { path: 'newPoll', component: NewpollComponent, canActivate: [AuthGuard]}
 ];
 @NgModule({
   imports: [
